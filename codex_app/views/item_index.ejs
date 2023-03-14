@@ -1,34 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spells</title>
+    <title>Items</title>
 </head>
-
 <body>
 
     <nav>
-        <button onclick="window.location.href='/spells/new';">
-            Add New Spell 
+        <button onclick="window.location.href='/items/new';">
+            Add New Item 
         </button>
     </nav>
-
+    
     <table>
-        <% for(let i=0; i < spell.length; i++) { %>
+        <% for(let i=0; i < item.length; i++) { %>
             <tr>
                 <td>
-                    <a href="/spells/<%=spell[i]._id%>">
-                        <%= spell[i].name %>:
+                    <a href="/items/<%=item[i]._id%>">
+                        <%= item[i].name %>:
                     </a>
-                    <%= spell[i].shortDescription %>
+                    <%= item[i].damage %>
                 </td>
             </tr>
             <% } %>
     </table>
-
+    
 </body>
-
 </html>
