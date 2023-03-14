@@ -11,6 +11,7 @@ const spellSchema = new mongoose.Schema({
     description: String,
     atHigherLevels: String,
     shortDescription: String,
+    userNotes: String
 })
 
 const spellCollection = mongoose.model('Spells', spellSchema)

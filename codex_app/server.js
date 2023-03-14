@@ -32,26 +32,51 @@ app.get('/', (req, res) => {
 
 
 //FORM ROUTE
-
+app.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
 
 //SHOW ROUTE
+app.get('/:id', (req, res) => {
+    Spells.findById(req.params.id).then((found) => {
+        res.render('show.ejs', {show: found})
+    })
+})
 
 
 //EDIT ROUTE
-
+app.get('/:id/edit', (req, res) => {
+    Spells.findById(req.params.id).then((foundEdit) => {
+        res.render('edit.ejs', {
+            editSpell: foundEdit
+        })
+    })
+})
 
 //===================================================
 // ACTION ROUTES
 //===================================================
 
 //POST REQUEST
-
+app.post('/', (req, res) => {
+    Spells.create(req.body).then((createdSpell) => {
+        res.redirect('/')
+    })
+})
 
 //PUT REQUEST
-
+app.put('/:id', (req, res) => {
+    Spells.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(() => {
+        res.redirect('/')
+    })
+})
 
 //DELETE REQUEST
-
+app.delete('/:id', (req, res) => {
+    Spells.findByIdAndRemove(req.params.id).then(() => {
+        res.redirect('/')
+    })
+})
 
 //===================================================
 //CONNECTIONS

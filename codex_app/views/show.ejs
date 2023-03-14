@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <h1>
+                <%=show.name%>
+            </h1>
+        </li>
+        <li>
+            <%=show.level%>
+                <%=show.spellType%>
+        </li>
+        <li>
+            <%=show.castingTime%>
+        </li>
+        <li>
+            <%=show.range%>
+        </li>
+        <li>
+            <%=show.components%>
+        </li>
+        <li>
+            <%=show.duration%>
+        </li>
+        <li>
+            <%=show.description%>
+        </li>
+        <li>
+            <%=show.atHigherLevels%>
+        </li>
+        <li>
+            User Notes: <%=show.userNotes%>
+        </li>
+        <br>
+        </div>
+        <form action="/<%=show._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Remove Spell">
+        </form>
+        <button onclick="window.location.href='/<%=show.id%>/edit';">
+            Edit
+        </button>
+
+        <nav>
+            <button onclick="window.location.href='/';">
+                Back
+            </button>
+        </nav>
+        </div>
+    </ul>
+</body>
+
+</html>
