@@ -12,42 +12,92 @@ app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(express.urlencoded({extended: true}))
 
+//***************************************************************** */
+//***************************************************************** */
+// ITEMS
+//***************************************************************** */
+//***************************************************************** */
+
 //===================================================
 // GET ROUTES
 //===================================================
 
 //SEED ROUTE
-// app.get('/seed', (req, res) => {
+// app.get('/spells/seed', (req, res) => {
 //     Spells.create(Seed).then((spell) => {
 //         res.send(spell)
 //     })
 // })
 
 //INDEX ROUTE
-app.get('/', (req, res) => {
+
+
+
+//FORM ROUTE
+
+
+//SHOW ROUTE
+
+
+
+//EDIT ROUTE
+
+
+//===================================================
+// ACTION ROUTES
+//===================================================
+
+//POST REQUEST
+
+
+//PUT REQUEST
+
+
+//DELETE REQUEST
+
+
+//***************************************************************** */
+//***************************************************************** */
+// SPELLS
+//***************************************************************** */
+//***************************************************************** */
+
+//===================================================
+// GET ROUTES
+//===================================================
+
+//SEED ROUTE
+// app.get('/spells/seed', (req, res) => {
+//     Spells.create(Seed).then((spell) => {
+//         res.send(spell)
+//     })
+// })
+
+//INDEX ROUTE
+app.get('/spells', (req, res) => {
     Spells.find({}).then((foundSpell) => {
-        res.render('index.ejs', {spell: foundSpell})
+        res.render('spell_index.ejs', {spell: foundSpell})
     })
 })
 
 
 //FORM ROUTE
-app.get('/new', (req, res) => {
-    res.render('new.ejs')
+app.get('/spells/new', (req, res) => {
+    res.render('spell_new.ejs')
 })
 
 //SHOW ROUTE
-app.get('/:id', (req, res) => {
+app.get('/spells/:id', (req, res) => {
     Spells.findById(req.params.id).then((found) => {
-        res.render('show.ejs', {show: found})
+        res.render('spell_show.ejs', {show: found})
     })
 })
 
 
 //EDIT ROUTE
-app.get('/:id/edit', (req, res) => {
+app.get('/spells/:id/edit', (req, res) => {
     Spells.findById(req.params.id).then((foundEdit) => {
-        res.render('edit.ejs', {
+        res.render('spell_edit.ejs', {
             editSpell: foundEdit
         })
     })
@@ -58,23 +108,23 @@ app.get('/:id/edit', (req, res) => {
 //===================================================
 
 //POST REQUEST
-app.post('/', (req, res) => {
+app.post('/spells/', (req, res) => {
     Spells.create(req.body).then((createdSpell) => {
-        res.redirect('/')
+        res.redirect('/spells')
     })
 })
 
 //PUT REQUEST
-app.put('/:id', (req, res) => {
+app.put('/spells/:id', (req, res) => {
     Spells.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(() => {
-        res.redirect('/')
+        res.redirect('/spells')
     })
 })
 
 //DELETE REQUEST
-app.delete('/:id', (req, res) => {
+app.delete('/spells/:id', (req, res) => {
     Spells.findByIdAndRemove(req.params.id).then(() => {
-        res.redirect('/')
+        res.redirect('/spells')
     })
 })
 

@@ -11,7 +11,7 @@
 <body>
 
     <nav>
-        <button onclick="window.location.href='/new';">
+        <button onclick="window.location.href='/spells/new';">
             Create New Spell 
         </button>
     </nav>
@@ -20,7 +20,7 @@
         <% for(let i=0; i < spell.length; i++) { %>
             <tr>
                 <td>
-                    <a href="/<%=spell[i]._id%>">
+                    <a href="/spells/<%=spell[i]._id%>">
                         <%= spell[i].name %>:
                     </a>
                     <%= spell[i].shortDescription %>
