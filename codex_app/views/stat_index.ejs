@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats</title>
+</head>
+
+<body>
+
+    <table>
+        <% for(let i=0; i < stat.length; i++) { %>
+            <tr>
+                <td>
+                    Strength: <%= stat[i].stats.abilityScores.strength %>
+                </td>
+            </tr>
+                 <tr>
+                <td>
+                    Dexterity: <%= stat[i].stats.abilityScores.dexterity %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Constitution: <%= stat[i].stats.abilityScores.constitution %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Intelligence: <%= stat[i].stats.abilityScores.intelligence %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Wisdom: <%= stat[i].stats.abilityScores.wisdom %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Charisma: <%= stat[i].stats.abilityScores.charisma %>
+                </td>
+            </tr>
+            <% } %>
+    </table>
+
+</body>
+
+</html>
