@@ -5,45 +5,222 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+
     <title>Stats</title>
 </head>
 
 <body>
-
     <table>
         <% for(let i=0; i < stat.length; i++) { %>
             <tr>
+                <h1>Battle Stats</h1>
                 <td>
-                    Strength: <%= stat[i].stats.abilityScores.strength %>
-                </td>
-            </tr>
-                 <tr>
-                <td>
-                    Dexterity: <%= stat[i].stats.abilityScores.dexterity %>
+                    Hit Points: <%= stat[i].stats.hitPoints.current %>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Constitution: <%= stat[i].stats.abilityScores.constitution %>
+                    AC: <%= stat[i].stats.ac %>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Intelligence: <%= stat[i].stats.abilityScores.intelligence %>
+                    Initiative: <%= stat[i].stats.initiative %>
                 </td>
             </tr>
             <tr>
                 <td>
-                    Wisdom: <%= stat[i].stats.abilityScores.wisdom %>
+                    Speed: <%= stat[i].stats.speed %>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    Charisma: <%= stat[i].stats.abilityScores.charisma %>
-                </td>
-            </tr>
-            <% } %>
     </table>
+    <!-- ABILITY SCORES  -->
+    <table>
+        <h1>Ability Scores </h1>
+        <tr>
+            <td>
+                Strength: <%= stat[i].stats.abilityScores.strength %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dexterity: <%= stat[i].stats.abilityScores.dexterity %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Constitution: <%= stat[i].stats.abilityScores.constitution %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Intelligence: <%= stat[i].stats.abilityScores.intelligence %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Wisdom: <%= stat[i].stats.abilityScores.wisdom %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Charisma: <%= stat[i].stats.abilityScores.charisma %>
+            </td>
+        </tr>
+    </table>
+    <!-- SKILLS -->
+    <table>
+        <h1>Skills </h1>
+        <tr>
+            <td>
+                Acrobatics: <%= stat[i].stats.skills.acrobatics %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Animal Handling: <%= stat[i].stats.skills.animalHandling %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Arcana: <%= stat[i].stats.skills.arcana %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Athletics: <%= stat[i].stats.skills.athletics %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Deception: <%= stat[i].stats.skills.deception %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                History: <%= stat[i].stats.skills.history %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Insight: <%= stat[i].stats.skills.insight %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Intimidation: <%= stat[i].stats.skills.intimidation %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Investigation: <%= stat[i].stats.skills.investigation %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Medicine: <%= stat[i].stats.skills.medicine %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Nature: <%= stat[i].stats.skills.nature %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Perception: <%= stat[i].stats.skills.perception %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Performance: <%= stat[i].stats.skills.performance %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Persuasion: <%= stat[i].stats.skills.persuasion %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Religion: <%= stat[i].stats.skills.religion %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Sleight of Hand: <%= stat[i].stats.skills.sleightOfHand %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Stealth: <%= stat[i].stats.skills.stealth %>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Survival: <%= stat[i].stats.skills.survival %>
+            </td>
+        </tr>
+        <!-- LANGUAGES AND PROFICIENCIES -->
+        <table>
+            <h1>Languages</h1>
+            <tr>
+                <td>
+                    <%= stat[i].stats.languages[0] %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= stat[i].stats.languages[1] %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= stat[i].stats.languages[2] %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= stat[i].stats.languages[3] %>
+                </td>
+            </tr>
+        </table>
+        <table>
+            <h1>Proficiencies</h1>
+            <tr>
+                <td>
+                    <%= stat[i].stats.proficiencies[0] %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= stat[i].stats.proficiencies[1] %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= stat[i].stats.proficiencies[2] %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= stat[i].stats.proficiencies[3] %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= stat[i].stats.proficiencies[4] %>
+                </td>
+            </tr>
+
+
+            <% } %>
+        </table>
+        <br>
+        <button onclick="window.location.href='/character/';">
+            Back
+        </button>
 
 </body>
 

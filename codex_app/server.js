@@ -19,30 +19,26 @@ app.use(express.urlencoded({extended: true}))
 //***************************************************************** */
 
 //SEED ROUTE
-// app.get('/character/seed', (req, res) => {
-//     Prime.create(PrimeSeed).then((character) => {
-//         res.send(character)
-//     })
-// })
+app.get('/character/seed', (req, res) => {
+    Prime.create(PrimeSeed).then((character) => {
+        res.send(character)
+    })
+})
 
 //INDEX ROUTE
-app.get('/characters', (req, res) => {
+app.get('/character', (req, res) => {
     Prime.find({}).then((foundCharacter) => {
         res.render('character_index.ejs', {character: foundCharacter})
     })
 })
 
-//FORM ROUTE
-
 
 //SHOW ROUTE
-app.get('/characters/:id' (req, res) => {
+app.get('/character/:id', (req, res) => {
     Prime.findById(req.params.id).then((found) => {
         res.render('character_show.ejs', {character: found})
     })
 })
-
-//EDIT ROUTE
 
 
 //***************************************************************** */
@@ -52,32 +48,11 @@ app.get('/characters/:id' (req, res) => {
 //***************************************************************** */
 
 //INDEX ROUTE
-app.get('/stats', (req, res) => {
+app.get('/character/:id/stats', (req, res) => {
     Prime.find({}).then((foundStat) => {
         res.render('stat_index.ejs', {stat: foundStat})
     })
 })
-
-//FORM ROUTE
-
-
-//SHOW ROUTE
-
-
-//EDIT ROUTE
-
-
-//===================================================
-// ACTION ROUTES
-//===================================================
-
-//POST REQUEST
-
-
-//PUT REQUEST
-
-
-//DELETE REQUEST
 
 
 //***************************************************************** */

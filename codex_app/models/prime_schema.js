@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const primeSchema = new mongoose.Schema({
   //CHARACTER
-  name: {type: String},
+  character: {type: String},
   //STATS
   stats: {
     abilityScores: {},
@@ -16,7 +16,7 @@ const primeSchema = new mongoose.Schema({
   },
   //SPELLS
   spells: {
-    name: String,
+    spellName: String,
     level: String,
     spellType: String,
     castingTime: String,
@@ -30,8 +30,8 @@ const primeSchema = new mongoose.Schema({
   },
   //ITEMS
   items: {
-    name: String,
-    damge: String,
+    itemName: String,
+    damage: String,
     weight: String,
     properties: Array,
   },

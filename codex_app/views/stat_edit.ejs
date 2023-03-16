@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+
+    <title>Edit Stats</title>
+</head>
+<body>
+    <form action="/items/<%=editStat.id%>?_method=PUT" method="POST">
+        <input type="text" placeholder="Strength" name="name" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Dexterity" name="damage" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Constitution" name="weight" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Intelligence" name="properties" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Wisdom" name="properties" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Charisma" name="properties" value="<%=editStat.abilitysScores.strength%>">
+        <input type="submit" value="Edit Stats">
+    </form>
+
+    <nav>
+        <button onclick="window.location.href='/character/:id/stats';">
+            Back
+        </button>
+    </nav>
+</body>
+</html>

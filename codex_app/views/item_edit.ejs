@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+
     <title>Edit Item</title>
 </head>
+
 <body>
     <h1>
         Edit Item
     </h1>
 
-    <form action="/items/<%=editItem.id%>?_method=PUT" method="POST">
-        <input type="text" placeholder="name" name="name" value="<%=editItem.name%>">
-        <input type="text" placeholder="damage" name="damage" value="<%=editItem.damage%>">
-        <input type="text" placeholder="weight" name="weight" value="<%=editItem.weight%>">
-        <input type="text" placeholder="properties" name="properties" value="<%=editItem.properties%>">
+    <form action="items/<%=editItem.id%>/?_method=PUT" method="POST">
+        <input type="text" name="itemName" value="<%=editItem.items.itemName%>">
+        <input type="text" name="damage" value="<%=editItem.items.damage%>">
+        <input type="text" name="weight" value="<%=editItem.items.weight%>">
+        <input type="text" name="properties" value="<%=editItem.items.properties%>">
         <input type="submit" value="Edit Item">
     </form>
 
     <nav>
-        <!-- this doesn't work -->
         <button onclick="window.location.href='/items/<%=editItem.id%>';">
             Back
         </button>
     </nav>
 
 </body>
+
 </html>

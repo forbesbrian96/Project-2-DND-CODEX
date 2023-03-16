@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+
     <title>Items</title>
 </head>
+
 <body>
 
     <nav>
         <button onclick="window.location.href='/items/new';">
-            Add New Item 
+            Add New Item
         </button>
     </nav>
-    
+    <br>
     <table>
         <% for(let i=0; i < item.length; i++) { %>
             <tr>
                 <td>
                     <a href="/items/<%=item[i]._id%>">
-                        <%= item[i].name %>:
+                        <%= item[i].items.itemName %>:
                     </a>
                     <%= item[i].damage %>
                 </td>
             </tr>
             <% } %>
     </table>
-    
+    <br>
+    <button onclick="window.location.href='/character/';">
+        Back
+    </button>
 </body>
+
 </html>

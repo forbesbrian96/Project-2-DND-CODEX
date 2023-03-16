@@ -1,6 +1,7 @@
-module.exports = {
+module.exports = 
+{
   //CHARACTER SEED
-  name: "Brian",
+  character: "Brian",
   //STAT SEED
   stats: {
     abilityScores: {
@@ -17,7 +18,7 @@ module.exports = {
       temp: 0,
     },
     ac: 16,
-    intiative: -1,
+    initiative: -1,
     speed: 30,
     skills: {
       acrobatics: -1,
@@ -50,7 +51,7 @@ module.exports = {
   },
   //SPELL SEED
   spells: {
-    name: "Fireball",
+    spellName: "Fireball",
     level: "3rd Level",
     spellType: "Evocation",
     castingTime: "1 action",
@@ -65,9 +66,11 @@ module.exports = {
   },
   //ITEM SEED
   items: {
-    name: "Trident",
+    itemName: "Trident",
     damage: "1d6 piercing",
     weight: "4 lbs.",
     properties: ["Thrown (range 20/60)", "Versatile (1d8)"],
   },
-};
+}
+
+

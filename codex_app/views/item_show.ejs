@@ -1,42 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=show.name%></title>
+    <link rel="stylesheet" href="/app.css">
+
+    <title>
+        <%=show.items.itemName%>
+    </title>
 </head>
+
 <body>
     <ul>
         <li>
             <h1>
-                <%=show.name%>
+                <%=show.items.itemName%>
             </h1>
         </li>
         <li>
-            <%=show.damage%>
+            <%=show.items.damage%>
         </li>
         <li>
-            <%=show.weight%>
+            <%=show.items.weight%>
         </li>
         <li>
-            <%=show.properties%>
+            <%=show.items.properties%>
         </li>
         <br>
+        
         <div>
             <form action="/items/<%=show.id%>?_method=DELETE" method="POST">
                 <input type="submit" value="Trash Item">
             </form>
-                <button onclick="window.location.href='/items/<%=show.id%>/edit';">
-                    Edit
-                </button>
-            
+
+            <button onclick="window.location.href='/items/<%=show.id%>/edit';">
+                Edit
+            </button>
+
             <nav>
                 <button onclick="window.location.href='/items';">
                     Back
                 </button>
             </nav>
-            </div>
+        </div>
     </ul>
 </body>
+
 </html>

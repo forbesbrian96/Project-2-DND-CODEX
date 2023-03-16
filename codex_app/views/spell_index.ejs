@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app.css">
+
     <title>Spells</title>
 </head>
 
@@ -12,23 +14,26 @@
 
     <nav>
         <button onclick="window.location.href='/spells/new';">
-            Add New Spell 
+            Add New Spell
         </button>
     </nav>
-
+    <br>
     <table>
         <% for(let i=0; i < spell.length; i++) { %>
             <tr>
                 <td>
                     <a href="/spells/<%=spell[i]._id%>">
-                        <%= spell[i].name %>:
+                        <%= spell[i].spells.name %>:
                     </a>
                     <%= spell[i].shortDescription %>
                 </td>
             </tr>
             <% } %>
     </table>
-
+    <br>
+    <button onclick="window.location.href='/character/';">
+        Back
+    </button>
 </body>
 
 </html>

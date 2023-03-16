@@ -1,0 +1,100 @@
+<!-- Multiple Characters did no work
+
+{
+    //CHARACTER SEED
+    name: "Brian 2",
+    //STAT SEED
+    stats: {
+      abilityScores: {
+        strength: 0,
+        dexterity: 0,
+        constitution: 0,
+        intelligence: 0,
+        wisdom: 0,
+        charisma: 0,
+      },
+      hitPoints: {
+        current: 0,
+        max: 0,
+        temp: 0,
+      },
+      ac: 0,
+      intiative: 0,
+      speed: 0,
+      skills: {
+        acrobatics: 0,
+        animalHandling: 0,
+        arcana: 0,
+        athletics: 0,
+        deception: 0,
+        history: 0,
+        insight: 0,
+        intimidation: 0,
+        investigation: 0,
+        medicine: 0,
+        nature: 0,
+        perception: 0,
+        performance: 0,
+        persuasion: 0,
+        religion: 0,
+        sleightOfHand: 0,
+        stealth: 0,
+        survival: 0,
+      },
+      languages: ["None", ],
+      proficiencies: [
+        "None",
+      ],
+    },
+    //SPELL SEED
+    spells: {
+      name: "Run Away",
+      level: "Level 0",
+      spellType: "Nerd-omancy",
+      castingTime: "1 action",
+      range: "0 feet",
+      components: "Tears",
+      duration: "Instantaneous",
+      description: `Character runs away crying. It's very pathetic, and everyone laughs`,
+      atHigherLevels: `The higher the character level, the more it hurts their reputation`,
+      shortDescription:
+        "Cry and run away",
+      userNotes: "",
+    },
+    //ITEM SEED
+    items: {
+      name: "Paper Ball",
+      damage: "1 bludgeoning damage",
+      weight: "1 oz",
+      properties: ["Thrown (range 2/6)",],
+    },
+  }, -->
+
+  <!-- Stat Editing got very strange and complicated, because it's index page was really it's show page
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Stats</title>
+</head>
+<body>
+    <form action="/items/<%=editStat.id%>?_method=PUT" method="POST">
+        <input type="text" placeholder="Strength" name="name" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Dexterity" name="damage" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Constitution" name="weight" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Intelligence" name="properties" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Wisdom" name="properties" value="<%=editStat.abilitysScores.strength%>">
+        <input type="text" placeholder="Charisma" name="properties" value="<%=editStat.abilitysScores.strength%>">
+        <input type="submit" value="Edit Stats">
+    </form>
+
+    <nav>
+        <button onclick="window.location.href='/character/:id/stats';">
+            Back
+        </button>
+    </nav>
+</body>
+</html> -->
