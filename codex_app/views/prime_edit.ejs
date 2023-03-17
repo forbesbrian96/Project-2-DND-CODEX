@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/<%=edit.id%>?_method=PUT" method="POST">
+        <input type="text" name="spellName" value="<%=edit.spells.spellName%>">
+        <input type="text" name="level" value="<%=edit.spells.level%>">
+        <input type="text" name="spellType" value="<%=edit.spells.spellType%>">
+        <input type="text" name="castingTime" value="<%=edit.spells.castingTime%>">
+        <input type="text" name="range" value="<%=edit.spells.range%>">
+        <input type="text" name="components" value="<%=edit.spells.components%>">
+        <input type="text" name="duration" value="<%=edit.spells.duration%>">
+        <input type="text" name="description" value="<%=edit.spells.description%>">
+        <input type="text" name="atHigherLevels" value="<%=edit.spells.atHigherLevels%>">
+        <input type="text" name="shortDescription" value="<%=edit.spells.shortDescription%>">
+        <input type="text" name="userNotes" value="<%=edit.spells.userNotes%>">
+        <input type="submit" value="Edit Spell">
+    </form>
+
+</body>
+</html>

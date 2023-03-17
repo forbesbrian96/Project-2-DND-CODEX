@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= index.character %>
+    </title>
+</head>
+
+<body>
+    <% for(let i=0; i < index.length; i++) { %>
+        <!-- GENERAL INFO -->
+        <h2>
+            <%= index[i].character %>
+        </h2>
+
+        <!-- STATS -->
+        <h4>
+            Max Hit Points: <%= index[i].stats.hitPoints.current %>
+        </h4>
+        <h4>
+            AC: <%= index[i].stats.ac %>
+        </h4>
+        <h4>
+            Initiative: <%= index[i].stats.initiative %>
+        </h4>
+        <h4>
+            Speed: <%= index[i].stats.speed %>
+        </h4>
+
+
+        <!-- Ability Scores -->
+        <table>
+            <thead>
+            <tr>
+                <th>
+                    Ability Scores
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Strength
+                </td>
+                <td>
+                    <%= index[i].stats.abilityScores.strength %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Dexterity
+                </td>
+                <td>
+                    <%= index[i].stats.abilityScores.dexterity %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Constitution
+                </td>
+                <td>
+                    <%= index[i].stats.abilityScores.constitution %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Intelligence
+                </td>
+                <td>
+                    <%= index[i].stats.abilityScores.intelligence %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Wisdom
+                </td>
+                <td>
+                    <%= index[i].stats.abilityScores.wisdom %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Charisma
+                </td>
+                <td>
+                    <%= index[i].stats.abilityScores.charisma %>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <br>
+
+        <!-- Skills -->
+        <table>
+            <thead>
+            <tr>
+                <th>
+                    Skills
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Acrobatics
+                </td>
+                <td>
+                    <%= index[i].stats.skills.acrobatics %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Animal Handling
+                </td>
+                <td>
+                    <%= index[i].stats.skills.animalHandling %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Arcana
+                </td>
+                <td>
+                    <%= index[i].stats.skills.arcana %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Athletics
+                </td>
+                <td>
+                    <%= index[i].stats.skills.athletics %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Deception
+                </td>
+                <td>
+                    <%= index[i].stats.skills.deception %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    History
+                </td>
+                <td>
+                    <%= index[i].stats.skills.history %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Insight
+                </td>
+                <td>
+                    <%= index[i].stats.skills.insight %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Intimidation
+                </td>
+                <td>
+                    <%= index[i].stats.skills.intimidation %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Investigation
+                </td>
+                <td>
+                    <%= index[i].stats.skills.investigation %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Medicine
+                </td>
+                <td>
+                    <%= index[i].stats.skills.medicine %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Nature
+                </td>
+                <td>
+                    <%= index[i].stats.skills.nature %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Perception
+                </td>
+                <td>
+                    <%= index[i].stats.skills.perception %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Performance
+                </td>
+                <td>
+                    <%= index[i].stats.skills.performance %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Persuasion
+                </td>
+                <td>
+                    <%= index[i].stats.skills.persuasion %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Religion
+                </td>
+                <td>
+                    <%= index[i].stats.skills.religion %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Sleight of Hand
+                </td>
+                <td>
+                    <%= index[i].stats.skills.sleightOfHand %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Stealth
+                </td>
+                <td>
+                    <%= index[i].stats.skills.stealth %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Survival
+                </td>
+                <td>
+                    <%= index[i].stats.skills.survival %>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <br>
+
+        <!-- SPELLS -->
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        Spells
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="/<%=index[i].id%>">
+                        <%= index[i].spells.spellName %>
+                    </a>
+                    </td>
+                    <td>
+                        <%= index[i].spells.shortDescription %>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            <br>
+
+            <!-- ITEMS -->
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        Items
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <%= index[i].items.itemName %>
+                    </td>
+                    <td>
+                        <%= index[i].items.damage %>
+                    </td>
+                    <td>
+                        <%= index[i].items.weight %>
+                    </td>
+                    <td>
+                        <%= index[i].items.properties %>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            <br>
+
+        <% } %>
+</body>
+
+</html>
