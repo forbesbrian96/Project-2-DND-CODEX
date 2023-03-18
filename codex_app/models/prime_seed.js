@@ -50,7 +50,8 @@ module.exports =
     ],
   },
   //SPELL SEED
-  spells: {
+  spells: [
+  {
     spellName: "Fireball",
     level: "3rd Level",
     spellType: "Evocation",
@@ -63,7 +64,7 @@ module.exports =
     shortDescription:
       "Cast a ball of fire up to 150ft, creating a 20-foot-radius-sphere for a DEX save. 8d6 on failed save, or half on successful.",
     userNotes: "",
-  },
+  }],
   //ITEM SEED
   items: {
     itemName: "Trident",

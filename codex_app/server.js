@@ -21,7 +21,9 @@ app.use(express.urlencoded({extended: true}))
 //SEED ROUTE
 app.get('/codex/seed', (req, res) => {
     Prime.create(PrimeSeed).then((character) => {
-        res.send(character)
+        res.send(character);
+    }).catch((error) => {
+        console.log(error);
     })
 })
 
@@ -36,11 +38,21 @@ app.get('/', (req, res) => {
     })
 })
 
+// //POST REQUEST
+// app.post('/', (req,res) => {
+//     Prime.create(req.body).then((created) => {
+//         // created.spells.push()
+//         res.redirect('/')
+//         console.log(created);
+//     })
+// })
 
-//FORM ROUTE
-app.get('/spells/new', (req, res) => {
-    res.render('spell_new.ejs')
-})
+// //FORM ROUTE
+// app.get('/new/:id', (req, res) => {
+//     Prime.findById(req.params.id).then((found) => {
+//         res.render('prime_new.ejs', {show: found})
+//     })
+// })
 
 //SHOW ROUTE
 app.get('/:id', (req, res) => {
@@ -63,26 +75,18 @@ app.get('/:id/edit', (req, res) => {
 // ACTION ROUTES
 //===================================================
 
-//POST REQUEST
-app.post('/spells', (req, res) => {
-    Prime.create(req.body).then((createdSpell) => {
-        res.redirect('/spells')
-    })
-})
+
+
 
 //PUT REQUEST
 app.put('/:id', (req, res) => {
-    Prime.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(() => {
+    Prime.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((data) => {
         res.redirect('/')
     })
 })
 
 //DELETE REQUEST
-app.delete('/spells/:id', (req, res) => {
-    Prime.findByIdAndRemove(req.params.id).then(() => {
-        res.redirect('/spells')
-    })
-})
+
 
 // //***************************************************************** */
 // //***************************************************************** */
@@ -259,10 +263,12 @@ app.delete('/spells/:id', (req, res) => {
 //===================================================
 //CONNECTIONS
 //===================================================
-mongoose.connect('mongodb://localhost:27017/dnd_codex').then(() => {
-    console.log('connection with mongo established');
-})
-
 app.listen(port, () => {
     console.log('listening');
 })
+
+mongoose.connect('mongodb://localhost:27017/dnd_codex')
+// .then(() => {
+//     console.log('connection with mongo established');
+// })
+

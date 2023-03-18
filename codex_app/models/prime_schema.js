@@ -15,7 +15,8 @@ const primeSchema = new mongoose.Schema({
     proficiencies: [],
   },
   //SPELLS
-  spells: {
+  spells: [
+  {
     spellName: String,
     level: String,
     spellType: String,
@@ -27,7 +28,7 @@ const primeSchema = new mongoose.Schema({
     atHigherLevels: String,
     shortDescription: String,
     userNotes: String,
-  },
+  }],
   //ITEMS
   items: {
     itemName: String,

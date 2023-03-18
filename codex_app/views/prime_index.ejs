@@ -11,7 +11,17 @@
 </head>
 
 <body>
+
+   
+       
+    
+
     <% for(let i=0; i < index.length; i++) { %>
+        <nav>
+            <a href="/new/<%=index[i]._id%>">
+                Learn New Spell
+            </a>
+        </nav>
         <!-- GENERAL INFO -->
         <h2>
             <%= index[i].character %>
@@ -20,6 +30,7 @@
         <!-- STATS -->
         <h4>
             Max Hit Points: <%= index[i].stats.hitPoints.current %>
+          
         </h4>
         <h4>
             AC: <%= index[i].stats.ac %>
@@ -253,6 +264,7 @@
         <br>
 
         <!-- SPELLS -->
+      
             <table>
                 <thead>
                 <tr>
@@ -265,15 +277,16 @@
                 <tr>
                     <td>
                         <a href="/<%=index[i].id%>">
-                        <%= index[i].spells.spellName %>
+                        <%= index[i].spells[i].spellName %>
                     </a>
                     </td>
                     <td>
-                        <%= index[i].spells.shortDescription %>
+                        <%= index[i].spells[i].shortDescription %>
                     </td>
                 </tr>
             </tbody>
             </table>
+           
             <br>
 
             <!-- ITEMS -->
@@ -305,6 +318,7 @@
             <br>
 
         <% } %>
+       
 </body>
 
 </html>
