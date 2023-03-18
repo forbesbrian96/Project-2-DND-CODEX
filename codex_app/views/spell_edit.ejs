@@ -14,17 +14,17 @@
     </h1>
 
     <form action="/spells/<%=editSpell.id%>?_method=PUT" method="POST">
-        <input type="text" placeholder="name" name="name" value="<%=editSpell.spells.name%>">
-        <input type="text" placeholder="level" name="level" value="<%=editSpell.spells.level%>">
-        <input type="text" placeholder="spell type" name="spellType" value="<%=editSpell.spells.spellType%>">
-        <input type="text" placeholder="casting time" name="castingTime" value="<%=editSpell.spells.castingTime%>">
-        <input type="text" placeholder="range" name="range" value="<%=editSpell.spells.range%>">
-        <input type="text" placeholder="components" name="components" value="<%=editSpell.spells.components%>">
-        <input type="text" placeholder="duration" name="duration" value="<%=editSpell.spells.duration%>">
-        <input type="text" placeholder="description" name="description" value="<%=editSpell.spells.description%>">
-        <input type="text" placeholder="at higher levels" name="atHigherLevels" value="<%=editSpell.spells.atHigherLevels%>">
-        <input type="text" placeholder="short description" name="shortDescription" value="<%=editSpell.spells.shortDescription%>">
-        <input type="text" placeholder="user notes" name="userNotes" value="<%=editSpell.spells.userNotes%>">
+        <input type="text" placeholder="name" name="spells.spellName" value="<%=editSpell.spells.spellName%>">
+        <input type="text" placeholder="level" name="spells.level" value="<%=editSpell.spells.level%>">
+        <input type="text" placeholder="spell type" name="spells.spellType" value="<%=editSpell.spells.spellType%>">
+        <input type="text" placeholder="casting time" name="spells.castingTime" value="<%=editSpell.spells.castingTime%>">
+        <input type="text" placeholder="range" name="spells.range" value="<%=editSpell.spells.range%>">
+        <input type="text" placeholder="components" name="spells.components" value="<%=editSpell.spells.components%>">
+        <input type="text" placeholder="duration" name="spells.duration" value="<%=editSpell.spells.duration%>">
+        <input type="text" placeholder="description" name="spells.description" value="<%=editSpell.spells.description%>">
+        <input type="text" placeholder="at higher levels" name="spells.atHigherLevels" value="<%=editSpell.spells.atHigherLevels%>">
+        <input type="text" placeholder="short description" name="spells.shortDescription" value="<%=editSpell.spells.shortDescription%>">
+        <input type="text" placeholder="user notes" name="spells.userNotes" value="<%=editSpell.spells.userNotes%>">
         <input type="submit" value="Edit Spell">
     </form>
 

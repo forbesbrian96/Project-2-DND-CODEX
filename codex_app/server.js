@@ -5,6 +5,8 @@ const methodOverride = require('method-override')
 const app = express()
 const PrimeSeed = require('./models/prime_seed')
 const Prime = require('./models/prime_schema')
+const SpellSeed = require('./models/spell_seed')
+const Spell = require('./models/spell_schema')
 
 //CONFIGURATION
 const port = 3000
@@ -19,24 +21,22 @@ app.use(express.urlencoded({extended: true}))
 //***************************************************************** */
 
 //SEED ROUTE
-app.get('/codex/seed', (req, res) => {
-    Prime.create(PrimeSeed).then((character) => {
-        res.send(character);
-    }).catch((error) => {
-        console.log(error);
-    })
-})
+// app.get('/codex/seed', (req, res) => {
+//     Prime.create(PrimeSeed).then((character) => {
+//         res.send(character);
+//     })
+// })
 
 //===================================================
 // GET ROUTES
 //===================================================
 
 //INDEX ROUTE
-app.get('/', (req, res) => {
-    Prime.find({}).then((found) => {
-        res.render('prime_index.ejs', {index: found})
-    })
-})
+// app.get('/', (req, res) => {
+//     Prime.find({}).then((found) => {
+//         res.render('prime_index.ejs', {index: found})
+//     })
+// })
 
 // //POST REQUEST
 // app.post('/', (req,res) => {
@@ -55,21 +55,21 @@ app.get('/', (req, res) => {
 // })
 
 //SHOW ROUTE
-app.get('/:id', (req, res) => {
-    Prime.findById(req.params.id).then((found) => {
-        res.render('prime_show.ejs', {show: found})
-    })
-})
+// app.get('/:id', (req, res) => {
+//     Prime.findById(req.params.id).then((found) => {
+//         res.render('prime_show.ejs', {show: found})
+//     })
+// })
 
 
 //EDIT ROUTE
-app.get('/:id/edit', (req, res) => {
-    Prime.findById(req.params.id).then((foundEdit) => {
-        res.render('prime_edit.ejs', {
-            edit: foundEdit
-        })
-    })
-})
+// app.get('/:id/edit', (req, res) => {
+//     Prime.findById(req.params.id).then((foundEdit) => {
+//         res.render('prime_edit.ejs', {
+//             edit: foundEdit
+//         })
+//     })
+// })
 
 //===================================================
 // ACTION ROUTES
@@ -79,11 +79,11 @@ app.get('/:id/edit', (req, res) => {
 
 
 //PUT REQUEST
-app.put('/:id', (req, res) => {
-    Prime.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((data) => {
-        res.redirect('/')
-    })
-})
+// app.put('/:id', (req, res) => {
+//     Prime.findByIdAndUpdate(req.params.id, req.body, {new: true}).then((data) => {
+//         res.redirect('/')
+//     })
+// })
 
 //DELETE REQUEST
 
@@ -195,70 +195,77 @@ app.put('/:id', (req, res) => {
 //     })
 // })
 
-// //***************************************************************** */
-// //***************************************************************** */
-// // SPELLS
-// //***************************************************************** */
-// //***************************************************************** */
+//***************************************************************** */
+//***************************************************************** */
+// SPELLS
+//***************************************************************** */
+//***************************************************************** */
 
-// //===================================================
-// // GET ROUTES
-// //===================================================
+//SEED ROUTE
+app.get('/spells/seed', (req, res) => {
+    Spell.create(SpellSeed).then((spell) => {
+        res.send(spell);
+    })
+})
 
-// //INDEX ROUTE
-// app.get('/spells', (req, res) => {
-//     Prime.find({}).then((foundSpell) => {
-//         res.render('spell_index.ejs', {spell: foundSpell})
-//     })
-// })
+//===================================================
+// GET ROUTES
+//===================================================
 
-
-// //FORM ROUTE
-// app.get('/spells/new', (req, res) => {
-//     res.render('spell_new.ejs')
-// })
-
-// //SHOW ROUTE
-// app.get('/spells/:id', (req, res) => {
-//     Prime.findById(req.params.id).then((found) => {
-//         res.render('spell_show.ejs', {show: found})
-//     })
-// })
+//INDEX ROUTE
+app.get('/spells', (req, res) => {
+    Spell.find({}).then((foundSpell) => {
+        res.render('spell_index.ejs', {spell: foundSpell})
+    })
+})
 
 
-// //EDIT ROUTE
-// app.get('/spells/:id/edit', (req, res) => {
-//     Prime.findById(req.params.id).then((foundEdit) => {
-//         res.render('spell_edit.ejs', {
-//             editSpell: foundEdit
-//         })
-//     })
-// })
+//FORM ROUTE
+app.get('/spells/new', (req, res) => {
+    res.render('spell_new.ejs')
+})
 
-// //===================================================
-// // ACTION ROUTES
-// //===================================================
+//SHOW ROUTE
+app.get('/spells/:id', (req, res) => {
+    Spell.findById(req.params.id).then((found) => {
+        res.render('spell_show.ejs', {show: found})
+    })
+})
 
-// //POST REQUEST
-// app.post('/spells', (req, res) => {
-//     Prime.create(req.body).then((createdSpell) => {
-//         res.redirect('/spells')
-//     })
-// })
 
-// //PUT REQUEST
-// app.put('/spells/:id', (req, res) => {
-//     Prime.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(() => {
-//         res.redirect('/spells')
-//     })
-// })
+//EDIT ROUTE
+app.get('/spells/:id/edit', (req, res) => {
+    Spell.findById(req.params.id).then((foundEdit) => {
+        res.render('spell_edit.ejs', {
+            editSpell: foundEdit
+        })
+    })
+})
 
-// //DELETE REQUEST
-// app.delete('/spells/:id', (req, res) => {
-//     Prime.findByIdAndRemove(req.params.id).then(() => {
-//         res.redirect('/spells')
-//     })
-// })
+//===================================================
+// ACTION ROUTES
+//===================================================
+
+//POST REQUEST
+app.post('/spells', (req, res) => {
+    Spell.create(req.body).then((createdSpell) => {
+        res.redirect('/spells')
+    })
+})
+
+//PUT REQUEST
+app.put('/spells/:id', (req, res) => {
+    Spell.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(() => {
+        res.redirect('/spells')
+    })
+})
+
+//DELETE REQUEST
+app.delete('/spells/:id', (req, res) => {
+    Spell.findByIdAndRemove(req.params.id).then(() => {
+        res.redirect('/spells')
+    })
+})
 
 //===================================================
 //CONNECTIONS
