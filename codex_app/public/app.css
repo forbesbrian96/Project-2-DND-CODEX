@@ -1,3 +1,23 @@
 body {
-    color: red
+    color: red;
+}
+
+h1 {
+    color: black;
+}
+
+#body-div {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: center;
+    margin: 5% 10%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
 }

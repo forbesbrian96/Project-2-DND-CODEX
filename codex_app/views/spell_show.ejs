@@ -5,58 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
     <link rel="stylesheet" href="/app.css">
 
-    <title><%=show.name%></title>
+    <title>
+        <%=show.name%>
+    </title>
 </head>
 
 <body>
-    <ul>
-        <li>
-            <h1>
-                <%=show.spells.spellName%>
-            </h1>
-        </li>
-        <li>
-            <%=show.spells.level%>
-                <%=show.spells.spellType%>
-        </li>
-        <li>
-            <%=show.spells.castingTime%>
-        </li>
-        <li>
-            <%=show.spells.range%>
-        </li>
-        <li>
-            <%=show.spells.components%>
-        </li>
-        <li>
-            <%=show.spells.duration%>
-        </li>
-        <li>
-            <%=show.spells.description%>
-        </li>
-        <li>
-            <%=show.spells.atHigherLevels%>
-        </li>
-        <li>
-            User Notes: <%=show.spells.userNotes%>
-        </li>
-        <br>
-        <div>
-        <form action="/spells/<%=show.id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Forget Spell">
-        </form>
-            <button onclick="window.location.href='/spells/<%=show.id%>/edit';">
-                Edit
-            </button>
-        
-        <nav>
-            <button onclick="window.location.href='/spells';">
-                Back
-            </button>
-        </nav>
-        </div>
+
+    <div id="body-div">
+        <ul>
+            <li>
+                <h1>
+                    <%=show.spells.spellName%>
+                </h1>
+            </li>
+            <li>
+                <%=show.spells.level%>
+                    <%=show.spells.spellType%>
+            </li>
+            <li>
+                <%=show.spells.castingTime%>
+            </li>
+            <li>
+                <%=show.spells.range%>
+            </li>
+            <li>
+                <%=show.spells.components%>
+            </li>
+            <li>
+                <%=show.spells.duration%>
+            </li>
+            <li>
+                <%=show.spells.description%>
+            </li>
+            <li>
+                <%=show.spells.atHigherLevels%>
+            </li>
+            <li>
+                User Notes: <%=show.spells.userNotes%>
+            </li>
+            <br>
+            <div>
+                <form action="/spells/<%=show.id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Forget Spell">
+                </form>
+                <button onclick="window.location.href='/spells/<%=show.id%>/edit';">
+                    Edit
+                </button>
+
+                <nav>
+                    <button onclick="window.location.href='/spells';">
+                        Back
+                    </button>
+                </nav>
+            </div>
+    </div>
     </ul>
 </body>
 

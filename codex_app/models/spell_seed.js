@@ -16,7 +16,6 @@ module.exports =
       "Cast a ball of fire up to 150ft, creating a 20-foot-radius-sphere for a DEX save. 8d6 on failed save, or half on successful.",
     userNotes: "",
   },
-  
 }
 
 

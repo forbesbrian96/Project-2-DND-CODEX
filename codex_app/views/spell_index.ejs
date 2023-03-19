@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
     <link rel="stylesheet" href="/app.css">
 
     <title>Spells</title>
@@ -12,28 +14,27 @@
 
 <body>
 
-    <nav>
-        <button onclick="window.location.href='/spells/new';">
-            Add New Spell
-        </button>
-    </nav>
-    <br>
-    <table>
-        <% for(let i=0; i < spell.length; i++) { %>
-            <tr>
-                <td>
-                    <a href="/spells/<%=spell[i]._id%>">
-                        <%= spell[i].spells.spellName %>:
-                    </a>
-                    <%= spell[i].spells.shortDescription %>
-                </td>
-            </tr>
-            <% } %>
-    </table>
-    <br>
-    <button onclick="window.location.href='/character/';">
-        Back
-    </button>
+    <div id="body-div">
+        <br>
+        <table>
+            <% for(let i=0; i < spell.length; i++) { %>
+                <tr>
+                    <td>
+                        <a href="/spells/<%=spell[i]._id%>">
+                            <%= spell[i].spells.spellName %>:
+                        </a>
+                        <%= spell[i].spells.shortDescription %>
+                    </td>
+                </tr>
+                <% } %>
+        </table>
+        <br>
+        <nav>
+            <button onclick="window.location.href='/spells/new';">
+                Add New Spell
+            </button>
+        </nav>
+    </div>
 </body>
 
 </html>
